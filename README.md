@@ -6,6 +6,8 @@ This project was created as part of the MAM course at LBS - AM10: Data Visualisa
 
 The project analyses the livestreaming business and tries to answer questions regarding Twitch and its Monopoly
 
+
+Some examples of Visualisations
 1.
 ![World](https://github.com/adityaraute/am10-MAM2023-Group8/assets/43912470/4d7b417b-79e8-4a2f-bbbf-20e68fb4da65)
 
