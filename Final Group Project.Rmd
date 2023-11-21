@@ -232,7 +232,7 @@ Twitch_global_data$Date <- make_date(Twitch_global_data$year, Twitch_global_data
 
 # Create the plot with a more gentle color for the bars and smaller points for peak viewers
 ggplot(Twitch_global_data, aes(x = Date)) +
-  geom_bar(aes(y = Avg_viewers), stat = "identity", fill = "#AEC7E8", alpha = 0.7) + # Lighter blue color
+  geom_bar(aes(y = Avg_viewers), stat = "identity", fill = "#5D3FD3", alpha = 0.7) + # Lighter blue color
   geom_point(aes(y = Peak_viewers), color = "orange", size = 2) + # Smaller points
   scale_x_date(labels = date_format("%Y"), breaks = date_breaks("1 year")) +
   scale_y_continuous(labels = comma) +
