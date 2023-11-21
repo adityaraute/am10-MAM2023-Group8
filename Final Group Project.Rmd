@@ -319,23 +319,22 @@ Proportion_top10 <- ggplot(total_hours_by_group, aes(x = year, y = Total_hours_w
        x = "Year",
        y = "Total Hours Watched",
        fill = "Genre Group") +
-  scale_fill_manual(values = c("Top 10" = "purple", "Others" = "darkgrey")) +  # Set colors for the groups
+  scale_fill_manual(values = c("Top 10" = "purple", "Others" = "darkgrey")) +
   theme_minimal() + 
   theme(panel.grid = element_blank(),
-        legend.position = c(0.01, 0.99),  # Top left corner
-        legend.justification = c(0.01, 0.99),  # Top left corner
-        legend.box.margin = margin(0, 0, 0, 0),  # Reduce margin around legend
-        legend.margin = margin(0, 0, 0, 0)) +  # Reduce margin around legend
-  
-  geom_text(aes(label = sprintf("%.1f%%", Percentage)),
+        legend.position = c(0.01, 0.99), 
+        legend.justification = c(0.01, 0.99), 
+        legend.box.margin = margin(0, 0, 0, 0), 
+        legend.margin = margin(0, 0, 0, 0)) +
+  geom_text(aes(label = paste0(round(Percentage), "%")),
             position = position_stack(vjust = 0.5), 
-            color = "white", 
-            size = 3)
-
-#ggsave("Proportion_top10.png", plot = Proportion_top10, width = 10, height = 6, units = "in")
-
+            color = "Black", 
+            size = 5)
 
 Proportion_top10
+
+
+
 
 
 ```
