@@ -41,6 +41,7 @@ df_game <- read_csv("datasets/Twitch_game_data.csv", col_types = cols())
 
 
 # Twitch's Growth
+COVID-19 – Twitch has seen an explosion in popularity from users and streamers since the pandemic started.
 
 ```{r twitch-hours, warning = FALSE}
 
@@ -105,7 +106,7 @@ p2
 ```
 
 # Kick's Growth
-
+Kick Overview – Competitor to Twitch started out strong attracting streamers and users but has lost its momentum with hours watched plateauing and active channels dropping
 
 ```{r Kick, warning = FALSE}
 
@@ -156,7 +157,7 @@ p5
 ```
 
 # Viewer Ratios
-
+Viewership Dynamics – Twitch's panorama reveals a rising trend in audience numbers with a stable viewer ratio, underscoring a robust and unwavering engagement across the platform. 
 
 ```{r global-data, warning = FALSE}
 # Peek at the data
@@ -217,10 +218,11 @@ ggplot(data = yearly_avg_viewer_ratio, aes(x = year, y = Change)) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "darkgrey")   # Reference line at 0%
 
 ```
+The average for Twitch viewer ratio centered around 26. The chart reflects a stable annual change in Twitch's average viewer ratio, mostly within a 10% range, signifying consistent dynamics between viewers and existing channels.
 
 
 # Correlation with Channels
-
+A surge in Twitch viewership during the 2020-2021 period is likely attributed to the COVID-19 lockdowns, followed by a normalization post-pandemic as audiences spend less time on live streaming. Several peak viewerships have resulted from major gaming tournament like dota2, LOL, and PUBG.
 ```{r Viewers and Channels correlations }
 
 # Assuming Twitch_global_data is your dataframe and it has columns for 'year', 'Month', 'Avg_viewers', 'Peak_viewers'
@@ -249,6 +251,7 @@ theme_minimal() +
 
 
 # Genres
+Genres Breakdown – Top 10 genres have are slowing in growth but still contribute to over 70% of hours watched on Twitch
 
 ```{r Genre Analysis, warning = FALSE}
 
@@ -283,7 +286,8 @@ Top10_genres_watched <- ggplot(top_10_data, aes(x = year, y = Total_hours_watche
 Top10_genres_watched
 
 ```
-
+Twitch's growth in genres like Action/Adventure, MMORPG, Shooter, Shooter/Battle Royale, and Social/Chatting until mid-2021 is evident, showcasing adaptability to diverse viewer interests. 
+The mid-2021 peak is likely COVID-related, with post-pandemic declines across all genres.
 
 ```{r Share of Genre Analysis, warning = FALSE}
 # Select the top 10 genres by total hours watched
@@ -315,7 +319,7 @@ Proportion_top10 <- ggplot(total_hours_by_group, aes(x = year, y = Total_hours_w
        x = "Year",
        y = "Total Hours Watched",
        fill = "Genre Group") +
-  scale_fill_manual(values = c("Top 10" = "red", "Others" = "gray")) +  # Set colors for the groups
+  scale_fill_manual(values = c("Top 10" = "purple", "Others" = "darkgrey")) +  # Set colors for the groups
   theme_minimal() + 
   theme(panel.grid = element_blank(),
         legend.position = c(0.01, 0.99),  # Top left corner
@@ -335,10 +339,11 @@ Proportion_top10
 
 
 ```
-
+The chart reveals shifting genre popularity dynamics on Twitch from 2016 to 2022. 
+Notably, the proportion of watching hours for the top 10 genre groups declines, signaling a viewer preference shift towards other genres. This trend reflects a diversifying Twitch platform.
 
 # Drilling down for Games
-
+Popularity of Games/Content – Just Chatting leads the platform in total hours watched on contents after 2020, highlighting a significant shift towards more interactive and community-driven content on Twitch
 ```{r line-graph, warning = FALSE}
 
 print(df_game)
@@ -384,7 +389,7 @@ ggplot(grouped_data, aes(x = Year, y = Total_Hours, group = Game, color = Game))
 
 
 ```
-
+“Just Chatting” is the type of content that is leading the platform, together with "League of Legends," "Grand Theft Auto V," and "VALORANT" that  consistently ranked in the top positions. The increasing of “Just Chatting” popularity reached its peak at covid lockdown in 2022 due to the lack of in-person communication, aligning with the interest of large number of user base on Twitch community. 
 
 ```{r bar-1}
 
@@ -438,7 +443,9 @@ ggplot(grouped_data, aes(x = Avg_viewers , y = Game, fill = Avg_viewers)) +
 
 
 #Tableau Screenshots
+Nationalities of current top streamers – While US represents the majority here, there is substantial diversity in the nationalities of top streamers, especially in Europe and South America
 
+Game Streaming Titans – Among the global top 20 streamers, Twitch commands with 16 leading streamers, showcasing the its dominance in watch hours and broadcaster influence
 ```{r screenshots}
 
 #Distribution of top streamers in the World. Used Tableau to render on a world map
